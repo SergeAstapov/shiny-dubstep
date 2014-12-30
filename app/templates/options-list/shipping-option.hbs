@@ -1,0 +1,5 @@
+{{#each shippingOptionItem in shippingOptions}}
+    {{#view 'options-list/shipping-option-item' value=shippingOptionItem.id}}
+        {{shippingOptionItem.title}}
+    {{/view}}
+{{/each}}

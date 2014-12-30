@@ -2,7 +2,8 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'aeo-test1',
+    modulePrefix: 'shiny-dubstep',
+    podModulePrefix: 'shiny-dubstep/pods',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',

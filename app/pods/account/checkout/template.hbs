@@ -1,0 +1,30 @@
+<form {{action "createOrder" on="submit"}}>
+    {{form-field label="Where should we send the receipt?" placeholder="E-mail" value=email type="email"}}
+
+    <div class="form-item">
+        How would you like to pay?
+
+        {{view 'options-list' templateName='options-list/pay-method'}}
+    </div>
+
+    <div class="form-item">
+        Where should we send it?
+
+        <fieldset>
+            <legend>Billing address</legend>
+            <div class="form-item">
+                <label for="shippingAsBilling"> Ship it where you bill it {{input type="checkbox" id="shippingAsBilling" checked=shippingAsBilling}}</label>
+                {{#unless shippingAsBilling}}
+                    {{view 'options-list' templateName='options-list/shipping-address'}}
+                {{/unless}}
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Shepping speed</legend>
+            {{view 'options-list' templateName='options-list/shipping-option'}}
+        </fieldset>
+    </div>
+
+    <button>Place order</button>
+</form>

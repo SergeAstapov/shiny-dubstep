@@ -1,0 +1,53 @@
+body
+    max-width 360px
+    margin 0
+    padding 0 10px
+    background #eee
+
+
+.form-item
+    margin 20px 0
+
+    legend + &
+        margin-top 0
+
+    fieldset > &:last-child
+        margin-bottom 0
+
+input
+    &[type=text],
+    &[type=email]
+        width 100%
+        height 25px
+        margin-top 5px
+        padding 5px 4px
+        border 1px solid #ccc
+        border-radius 2px
+        box-sizing border-box
+
+input[type=submit], button
+    width 100%
+    height 40px
+    background black
+    border 0
+    text-transform uppercase
+    color white
+    cursor pointer
+
+
+//.options-list
+
+.options-list--item
+    padding 5px
+    border 1px solid #666
+
+    & + &
+        margin-top 5px
+
+    &.selected,
+    &:not(.options-list--item--new)&:hover
+        background #ddd
+
+    &:not(.options-list--item--new)
+        cursor pointer
+

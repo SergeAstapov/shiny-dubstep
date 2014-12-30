@@ -1,0 +1,27 @@
+{{#each paymentMethodItem in paymentMethods}}
+    {{#view 'options-list/pay-method-item' value=paymentMethodItem.id}}
+        {{paymentMethodItem.title}}
+    {{/view}}
+{{/each}}
+{{#view 'options-list/pay-method-item' value="new"}}
+    {{#if useNewPayMethod}}
+        <fieldset>
+            <legend>Credit card info</legend>
+            {{input type="text" placeholder="Card number"            value=newPayMethod.card.number}}
+            {{input type="text" placeholder="Expiration date (MMYY)" value=newPayMethod.card.expDate}}
+            {{input type="text" placeholder="Secusity code"          value=newPayMethod.card.cvv}}
+        </fieldset>
+        <fieldset>
+            <legend>Billing address</legend>
+            {{input type="text" placeholder="First name on card"   value=newPayMethod.billingAddress.fname}}
+            {{input type="text" placeholder="Last name on card"    value=newPayMethod.billingAddress.lname}}
+            {{input type="text" placeholder="Street address"       value=newPayMethod.billingAddress.addr}}
+            {{input type="text" placeholder="Zip code"             value=newPayMethod.billingAddress.zip}}
+            {{input type="text" placeholder="City"                 value=newPayMethod.billingAddress.city}}
+            {{input type="text" placeholder="State"                value=newPayMethod.billingAddress.state}}
+            {{input type="text" placeholder="Billing phone number" value=newPayMethod.billingAddress.phone}}
+        </fieldset>
+    {{else}}
+        <button>Add payment method</button>
+    {{/if}}
+{{/view}}

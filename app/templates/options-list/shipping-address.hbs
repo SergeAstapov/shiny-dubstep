@@ -1,0 +1,20 @@
+{{#each shippingAddressItem in shippingAddresses}}
+    {{#view 'options-list/shipping-address-item' value=shippingAddressItem.id}}
+        {{shippingAddressItem.addr}}
+    {{/view}}
+{{/each}}
+{{#view 'options-list/shipping-address-item' value="new"}}
+    {{#if useNewShippingAddress}}
+        <fieldset>
+            <legend>Shipping address</legend>
+            {{input type="text" placeholder="First name"     value=newShippingAddress.fname}}
+            {{input type="text" placeholder="Last name"      value=newShippingAddress.lname}}
+            {{input type="text" placeholder="Street address" value=newShippingAddress.addr}}
+            {{input type="text" placeholder="Zip code"       value=newShippingAddress.zip}}
+            {{input type="text" placeholder="City"           value=newShippingAddress.city}}
+            {{input type="text" placeholder="State"          value=newShippingAddress.state}}
+        </fieldset>
+    {{else}}
+        <button>Add shipping address</button>
+    {{/if}}
+{{/view}}
